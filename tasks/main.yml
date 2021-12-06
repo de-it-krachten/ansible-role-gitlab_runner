@@ -123,6 +123,7 @@
           --url "{{ gitlab_runner_url }}"
           --registration-token "{{ gitlab_runner_token }}"
           --tag-list "{{ gitlab_runner_tags }}"
+          --run-untagged "{{ gitlab_runner_run_untagged }}"
           --executor "{{ gitlab_runner_executor }}"
           --docker-image "{{ gitlab_runner_docker_image }}"
       environment:
