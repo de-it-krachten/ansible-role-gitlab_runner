@@ -16,6 +16,9 @@ gitlab_runner_url: "https://gitlab.com/"
 # The tags, comma separated.
 gitlab_runner_tags: "docker,my_runner"
 
+# Run untagged builds
+gitlab_runner_run_untagged: false
+
 # The type of executor. Choose from: "ssh", "shell", "parallels", "virtualbox",
 # "docker", "docker_machine", "kubernetes" or "custom"
 gitlab_runner_executor: docker
