@@ -18,7 +18,7 @@
   ansible.builtin.assert:
     that:
       - gitlab_runner_token is defined
-      - gitlab_runner_token is string
+      - gitlab_runner_token is string or gitlab_runner_token is vault_encrypted
     quiet: yes
 
 - name: test if gitlab_runner_url is set correctly
