@@ -28,7 +28,8 @@
     https_proxy: "{{ https_proxy | default('') }}"
     http_proxy: "{{ http_proxy | default('') }}"
 
-- block:
+- name: Debian 11 fix
+  block:
 
     - name: For Debian11, use debian10 package repository
       copy:
@@ -54,7 +55,8 @@
     name: gitlab-runner
     state: present
 
-- block:
+- name: Provide support for HTTP proxy connection to Gitlab
+  block:
 
     - name: Create service drop-in directory
       file:
@@ -81,7 +83,8 @@
 
   when: gitlab_proxy_ip is defined
 
-- block:
+- name: Accept self-signed certificate
+  block:
 
     - name: create certs directory
       file:
